@@ -1,15 +1,13 @@
 package com.example.smartkasse;
 
-import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.PowerManager;
-import android.provider.Settings;
-import android.util.Log;
+import android.util.TypedValue;
 import android.view.KeyEvent;
-import android.view.WindowManager;
 import android.widget.GridView;
-
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
@@ -38,16 +36,33 @@ public class MainActivity extends SlidingActivity {
 		
 		
 		// ActionBar einrichten
-		Drawable d=getResources().getDrawable(com.actionbarsherlock.R.drawable.abs__ab_stacked_solid_dark_holo);;  
+		Drawable d=getResources().getDrawable(com.actionbarsherlock.R.drawable.abs__ab_stacked_solid_dark_holo);  
 		
 		
 		actionBar.setHomeButtonEnabled(true);
 		actionBar.setBackgroundDrawable(d);
-
-		// Display soll anbleiben
-		getWindow().addFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
 		
-		// Adapter um GridView damit zu füllen
+		
+		//Header des SlidingMenus genau so hoch machen wie der Actionbar	
+		int actionBarHeight=0;
+		//Dieser Block ließt die Höhe des Actionsbar aus
+	    TypedValue tv = new TypedValue();
+	    if (getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true))
+	        actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data,getResources().getDisplayMetrics());
+	    
+	    if(actionBarHeight ==0 && getTheme().resolveAttribute(com.actionbarsherlock.R.attr.actionBarSize, tv, true)){
+	            actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data,getResources().getDisplayMetrics());
+	    }
+	    
+	    //Überschrift im Header an die ausgelesene Höhe anpassen
+		 TextView header = (TextView)findViewById(R.id.sm_header_text);
+		 header.setHeight(actionBarHeight);
+		
+		 
+		 LinearLayout header1 = (LinearLayout)findViewById(R.id.sm_header);
+		 header1.setBackgroundColor(Color.DKGRAY);
+		
+		// Adapter um GridView damit zu füllen()
 		ButtonAdapter adapter = new ButtonAdapter(this, null);
 		GridView gridView = (GridView) findViewById(R.id.buttonframe);
 		gridView.setAdapter(adapter);
@@ -96,16 +111,7 @@ public class MainActivity extends SlidingActivity {
 	@Override
 	protected void onPause() {
 		// TODO Auto-generated method stub
-		// Display soll anbleiben
-				//getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-				
-				//WindowManager.LayoutParams lp = getWindow().getAttributes();
-				//lp.screenBrightness = 0.01f;
-				//getWindow().setAttributes(lp);
-		((PowerManager)getSystemService(POWER_SERVICE)).newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK, "TAG").acquire();
-		getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
 		
-		Log.v("Test","Test");
 		super.onPause();
 	}
 		

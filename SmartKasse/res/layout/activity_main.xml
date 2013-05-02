@@ -49,6 +49,6 @@
         android:horizontalSpacing="3dp"
         android:layout_margin="5dp"
         android:verticalSpacing="3dp"
-        android:scrollbarStyle="outsideOverlay"></GridView>
+        android:scrollbarStyle="insideOverlay"></GridView>
 
 </LinearLayout>
