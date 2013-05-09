@@ -12,9 +12,9 @@ import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.slidingmenu.lib.SlidingMenu;
-import com.slidingmenu.lib.app.SlidingActivity;
+import com.slidingmenu.lib.app.SlidingFragmentActivity;
 
-public class MainActivity extends SlidingActivity {
+public class MainActivity extends SlidingFragmentActivity {
 
 	SlidingMenu slidingMenu;
 	ActionBar actionBar;
@@ -22,7 +22,7 @@ public class MainActivity extends SlidingActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.mainfragment);
 		setBehindContentView(R.layout.behind_layout);
 
 		slidingMenu = getSlidingMenu();
