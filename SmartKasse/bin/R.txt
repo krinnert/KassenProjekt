@@ -260,7 +260,9 @@ int drawable abs__textfield_searchview_right_holo_dark 0x7f02006d
 int drawable abs__textfield_searchview_right_holo_light 0x7f02006e
 int drawable ic_customers 0x7f02006f
 int drawable ic_launcher 0x7f020070
-int drawable wood_bg_320x480 0x7f020071
+int drawable ic_new 0x7f020071
+int drawable ic_settings 0x7f020072
+int drawable wood_bg_320x480 0x7f020073
 int id abs__action_bar 0x7f040027
 int id abs__action_bar_container 0x7f040026
 int id abs__action_bar_subtitle 0x7f040016
@@ -301,7 +303,7 @@ int id abs__textButton 0x7f040018
 int id abs__title 0x7f040020
 int id abs__titleDivider 0x7f040021
 int id abs__up 0x7f04000b
-int id action_settings 0x7f040042
+int id action_settings 0x7f040046
 int id buttonframe 0x7f04003a
 int id confirm 0x7f040039
 int id customers_list 0x7f04003d
@@ -311,7 +313,11 @@ int id edit_query 0x7f04002c
 int id fullscreen 0x7f040013
 int id homeAsUp 0x7f040006
 int id left 0x7f040010
+int id list 0x7f040041
+int id listFragment 0x7f040042
 int id listMode 0x7f040002
+int id mainFragment 0x7f040043
+int id mainFragment2 0x7f040044
 int id margin 0x7f040012
 int id normal 0x7f040001
 int id number 0x7f04003e
@@ -321,7 +327,7 @@ int id selected_view 0x7f040014
 int id showCustom 0x7f040008
 int id showHome 0x7f040005
 int id showTitle 0x7f040007
-int id slidingmenumain 0x7f040041
+int id slidingmenumain 0x7f040045
 int id sm_header 0x7f04003b
 int id sm_header_text 0x7f04003c
 int id tabMode 0x7f040003
@@ -355,9 +361,13 @@ int layout abs__simple_dropdown_hint 0x7f030016
 int layout activity_main 0x7f030017
 int layout behind_layout 0x7f030018
 int layout button 0x7f030019
-int layout sherlock_spinner_dropdown_item 0x7f03001a
-int layout sherlock_spinner_item 0x7f03001b
-int layout slidingmenumain 0x7f03001c
+int layout list 0x7f03001a
+int layout listfragment 0x7f03001b
+int layout mainfragment 0x7f03001c
+int layout mainfragmentdynamic 0x7f03001d
+int layout sherlock_spinner_dropdown_item 0x7f03001e
+int layout sherlock_spinner_item 0x7f03001f
+int layout slidingmenumain 0x7f030020
 int menu main 0x7f0b0000
 int string abs__action_bar_home_description 0x7f090000
 int string abs__action_bar_up_description 0x7f090001
