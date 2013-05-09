@@ -3,6 +3,8 @@ package com.example.smartkasse;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.widget.GridView;
@@ -22,8 +24,10 @@ public class MainActivity extends SlidingFragmentActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.mainfragment);
+		setContentView(R.layout.mainfragmentdynamic);
+		addDynamicFragment();
 		setBehindContentView(R.layout.behind_layout);
+		
 
 		slidingMenu = getSlidingMenu();
 		actionBar = getSupportActionBar();
@@ -63,9 +67,9 @@ public class MainActivity extends SlidingFragmentActivity {
 		 header1.setBackgroundColor(Color.DKGRAY);
 		
 		// Adapter um GridView damit zu füllen()
-		ButtonAdapter adapter = new ButtonAdapter(this, null);
-		GridView gridView = (GridView) findViewById(R.id.buttonframe);
-		gridView.setAdapter(adapter);
+		//ButtonAdapter adapter = new ButtonAdapter(this, null);
+		//GridView gridView = (GridView) findViewById(R.id.buttonframe);
+		//gridView.setAdapter(adapter);
 		
 	
 		   
@@ -76,7 +80,7 @@ public class MainActivity extends SlidingFragmentActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		// getSupportMenuInflater().inflate(R.menu.main, menu);
+		getSupportMenuInflater().inflate(R.menu.main, menu);
 
 		return true;
 	}
@@ -100,6 +104,13 @@ public class MainActivity extends SlidingFragmentActivity {
 		case android.R.id.home:
 			slidingMenu.toggle();
 			break;
+		case R.id.action_new_customer:
+			FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+			ListFragment listFragment = new ListFragment();
+			ft.replace(R.id.linearLayout, listFragment);
+			ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+			ft.addToBackStack(null);
+			ft.commit();
 
 		default:
 			break;
@@ -114,5 +125,12 @@ public class MainActivity extends SlidingFragmentActivity {
 		
 		super.onPause();
 	}
-		
+	
+	private void addDynamicFragment(){
+		//Neue Instanz vom Fragment erzeugen
+		Fragment fragment = new MainFragment();
+		//Fragment zu layout hinzufügen --> Layout ist "leeres" LinearLayout
+		getSupportFragmentManager().beginTransaction().add(R.id.linearLayout, fragment).commit();
+	}
+	
 }

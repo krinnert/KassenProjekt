@@ -2,8 +2,28 @@
 
     <item
         android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:showAsAction="never"
+        android:icon="@drawable/ic_settings"
+        android:orderInCategory="1"
+        android:showAsAction="always"
         android:title="@string/action_settings"/>
+    <item
+        android:id="@+id/action_new"
+        android:icon="@drawable/ic_new"
+        android:orderInCategory="2"
+        android:showAsAction="always"
+        android:title="@string/action_settings">
+        <menu>
+            <item
+                android:id="@+id/action_new_customer"
+                android:orderInCategory="1"
+                android:showAsAction="always"
+                android:title="Kunde"/>
+            <item
+                android:id="@+id/action_settings"
+                android:orderInCategory="2"
+                android:showAsAction="always"
+                android:title="Taste"/>
+        </menu>
+    </item>
 
 </menu>
