@@ -8,6 +8,6 @@
   <fragment android:id="@+id/listFragment"
         android:layout_height="fill_parent"
         android:layout_width="fill_parent"
-        class="com.example.smartkasse.ListFragment"/>
+        class="com.example.smartkasse.Act_RegisterMain.ListFragment"/>
 
 </LinearLayout>

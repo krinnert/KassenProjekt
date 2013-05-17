@@ -1,4 +1,8 @@
-package com.example.smartkasse;
+package com.example.smartkasse.Act_RegisterMain;
+
+import com.example.smartkasse.R;
+import com.example.smartkasse.R.id;
+import com.example.smartkasse.R.layout;
 
 import android.app.Activity;
 import android.content.Context;

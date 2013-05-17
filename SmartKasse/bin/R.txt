@@ -303,6 +303,7 @@ int id abs__textButton 0x7f040018
 int id abs__title 0x7f040020
 int id abs__titleDivider 0x7f040021
 int id abs__up 0x7f04000b
+int id action_change_fragment 0x7f04004a
 int id action_new 0x7f040048
 int id action_new_customer 0x7f040049
 int id action_settings 0x7f040047
@@ -315,12 +316,12 @@ int id edit_query 0x7f04002c
 int id fullscreen 0x7f040013
 int id homeAsUp 0x7f040006
 int id left 0x7f040010
-int id linearLayout 0x7f040045
+int id linearLayout 0x7f040043
 int id list 0x7f040041
 int id listFragment 0x7f040042
 int id listMode 0x7f040002
-int id mainFragment 0x7f040043
-int id mainFragment2 0x7f040044
+int id mainFragment 0x7f040044
+int id mainFragment2 0x7f040045
 int id margin 0x7f040012
 int id normal 0x7f040001
 int id number 0x7f04003e
@@ -372,6 +373,7 @@ int layout sherlock_spinner_dropdown_item 0x7f03001e
 int layout sherlock_spinner_item 0x7f03001f
 int layout slidingmenumain 0x7f030020
 int menu main 0x7f0b0000
+int menu main2 0x7f0b0001
 int string abs__action_bar_home_description 0x7f090000
 int string abs__action_bar_up_description 0x7f090001
 int string abs__action_menu_overflow_description 0x7f090002
